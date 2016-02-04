@@ -17,7 +17,16 @@ public class Detail {
     public String toString() {
 
         pins.forEach((pin) -> {
-            str+=("pin " + pin.number + "; X: " + pin.x + "; Y:" + pin.y + "\n");
+            String proc = "pin#" + pin.number + "; X: " + pin.x + "; Y:" + pin.y+ ". ";
+            String mem = "pin#" + pin.connection.number + "; X: " + pin.connection.x + "; Y:" + pin.connection.y +"\n";
+            String connect = "o";
+            // Не обращайте внимания, мне просто очень захотелось это сделать
+            int kek = 40-proc.length();
+            for (int i = 0; i<kek; i++){
+                connect+="-";
+            }
+            connect+="o ";
+            str+=proc+connect+mem;
         });
         return str;
     }

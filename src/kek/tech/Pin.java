@@ -6,6 +6,7 @@ package kek.tech;
 public class Pin {
     float x, y;
     byte number;
+    Pin connection;
 
     public Pin(float x, float y, byte number) {
         this.x = x;
